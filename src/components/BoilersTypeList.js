@@ -11,3 +11,35 @@ class BoilersTypeList extends Component {
 }
 
 export default BoilersTypeList;
+
+/*<table>
+<thead>
+<tr>
+    <th>ID</th>
+    <th>DESCRIPTION</th>
+    <th>SKILLS</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</tbody>
+</table>*/
