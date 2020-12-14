@@ -6,9 +6,7 @@ import data from './data/boilersType.json';
 
 class App extends Component {
   state = {
-    boilersTypeList: [
-      data
-    ]
+    boilersTypeList: data
   }
   render() {
     return (

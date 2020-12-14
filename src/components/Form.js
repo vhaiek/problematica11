@@ -11,3 +11,15 @@ class Form extends Component {
 }
 
 export default Form;
+
+/*<div>
+<form>
+<label>ID</label> 
+<input type="text"></input>
+<label>DESCRIPTION</label> 
+<input type="text"></input> 
+<label>SKILLS</label> 
+<input type="text"></input>
+<input type="submit"name="submit" value="Submit">
+</form>
+</div>*/
