@@ -1,25 +1,68 @@
 import React, { Component } from 'react';
+import './Form.css';
 
 class Form extends Component {
+  state = {
+    category: " ",
+    id: " ",
+    description: " ",
+    skills: " "
+  }
+
+  onSubmit = (e) => {
+    e.preventDefault ();
+    this.props.form(this.state);
+    this.setState({ name: " "});
+  }
+  
+  onChange = (e) => this.setState ({[e.target.name]: e.target.value});
+
   render() {
     return (
       <div>
-        <h1>Add a new type of boiler...</h1>
+        <p>Add a new type of boiler...</p>
+        <form onSubmit ={this.onSubmit}>
+          <div className ="input-group">
+            <label>Category</label> 
+            <input 
+              type="text" 
+              name= "category"
+              value ={this.state.category}
+              onChange={this.onChange}>
+            </input>
+          </div>
+          <div className ="input-group">
+            <label>Id</label> 
+            <input 
+              type="text" 
+              name= "id"
+              value ={this.state.id}
+              onChange={this.onChange}>
+            </input>
+          </div> 
+          <div className ="input-group">
+            <label>Description</label> 
+            <input 
+              type="text" 
+              name= "description"
+              value ={this.state.description}
+              onChange={this.onChange}>
+            </input>
+          </div>  
+          <div className ="input-group">
+            <label>Skills</label> 
+            <input 
+              type="text" 
+              name= "skills"
+              value ={this.state.skills}
+              onChange={this.onChange}>
+            </input>
+          </div>  
+          <input type="submit"name="submit" value="Submit"></input>
+        </form>
       </div>
     );
   }
 }
 
 export default Form;
-
-/*<div>
-<form>
-<label>ID</label> 
-<input type="text"></input>
-<label>DESCRIPTION</label> 
-<input type="text"></input> 
-<label>SKILLS</label> 
-<input type="text"></input>
-<input type="submit"name="submit" value="Submit">
-</form>
-</div>*/
