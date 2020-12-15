@@ -3,6 +3,7 @@ import './Form.css';
 
 class Form extends Component {
   state = {
+    name: " ",
     category: " ",
     id: " ",
     description: " ",

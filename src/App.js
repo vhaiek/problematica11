@@ -9,10 +9,12 @@ class App extends Component {
     boilersTypeList: data
   }
   
-  form = (name) => {
+  addNewBoilerType = (newData) => {
     const newBoilerType = {
-      name: name,
-      completed: false
+      category: newData.category,
+      id: newData.id,
+      description: newData.description,
+      skills: newData.skills,
     }
     this.setState({boilersTypeList: [...this.state.boilersTypeList, newBoilerType]})
   }
@@ -22,7 +24,7 @@ class App extends Component {
       <div className="App">
         <h1>List</h1>
         <BoilersTypeList boilersTypeList={this.state.boilersTypeList}/>
-        <Form form={this.form}/>
+        <Form form={this.addNewBoilerType}/>
       </div>
     );
   }
