@@ -3,17 +3,22 @@ import './Form.css';
 
 class Form extends Component {
   state = {
-    name: " ",
-    category: " ",
-    id: " ",
-    description: " ",
-    skills: " "
+    name: "",
+    category: "",
+    id: "",
+    description: "",
+    skills: ""
   }
 
   onSubmit = (e) => {
     e.preventDefault ();
     this.props.addNewBoilerType(this.state);
-    this.setState({ name: " "});
+    this.setState({ 
+      category: "",
+      id: "",
+      description: "",
+      skills: ""
+    });
   }
   
   onChange = (e) => this.setState ({[e.target.name]: e.target.value});
@@ -23,7 +28,7 @@ class Form extends Component {
       <div className="container">
         <p>Add a new type of boiler...</p>
         <form onSubmit ={this.onSubmit}>
-          <div className ="input-group">
+          <div className="input-group">
             <label>Category</label> 
             <input 
               type="text" 
@@ -32,7 +37,7 @@ class Form extends Component {
               onChange={this.onChange}>
             </input>
           </div>
-          <div className ="input-group">
+          <div className="input-group">
             <label>Id</label> 
             <input 
               type="text" 
@@ -41,25 +46,25 @@ class Form extends Component {
               onChange={this.onChange}>
             </input>
           </div> 
-          <div className ="input-group">
+          <div className="input-group">
             <label>Description</label> 
             <input 
               type="text" 
-              name= "description"
-              value ={this.state.description}
+              name="description"
+              value={this.state.description}
               onChange={this.onChange}>
             </input>
           </div>  
-          <div className ="input-group">
+          <div className="input-group">
             <label>Skills</label> 
             <input 
               type="text" 
-              name= "skills"
-              value ={this.state.skills}
+              name="skills"
+              value={this.state.skills}
               onChange={this.onChange}>
             </input>
           </div>  
-          <input className= "btn"type="submit"name="submit" value="Submit"></input>
+          <input className="btn" type="submit" name="submit" value="Submit"></input>
         </form>
       </div>
     );
