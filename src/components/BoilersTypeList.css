@@ -1,0 +1,31 @@
+table {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    border-collapse: collapse;
+}
+  
+th{
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #880000
+} 
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+button {
+    border: none;
+    background-color: white;
+
+}
+h3{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    text-align: center;
+    color: #880000;
+    border-bottom: 1px solid #ddd;
+}

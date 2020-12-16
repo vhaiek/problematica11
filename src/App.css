@@ -11,3 +11,10 @@ a {
   color: #333;
   text-decoration: none;
 }
+h1 {
+  background-color: #232f3e;
+  font-size: sans-serif;
+  font-size: 30px;
+  width: 100%;
+  color: white;
+}

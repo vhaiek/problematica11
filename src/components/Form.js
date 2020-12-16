@@ -12,7 +12,7 @@ class Form extends Component {
 
   onSubmit = (e) => {
     e.preventDefault ();
-    this.props.form(this.state);
+    this.props.addNewBoilerType(this.state);
     this.setState({ name: " "});
   }
   
@@ -20,7 +20,7 @@ class Form extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <p>Add a new type of boiler...</p>
         <form onSubmit ={this.onSubmit}>
           <div className ="input-group">
@@ -59,7 +59,7 @@ class Form extends Component {
               onChange={this.onChange}>
             </input>
           </div>  
-          <input type="submit"name="submit" value="Submit"></input>
+          <input className= "btn"type="submit"name="submit" value="Submit"></input>
         </form>
       </div>
     );
