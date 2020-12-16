@@ -27,7 +27,7 @@ class Form extends Component {
     return (
       <div className="container">
         <p>Add a new type of boiler...</p>
-        <form onSubmit ={this.onSubmit}>
+        <form className="form" onSubmit ={this.onSubmit}>
           <div className="input-group">
             <label>Category</label> 
             <input 
