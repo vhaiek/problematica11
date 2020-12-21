@@ -12,10 +12,10 @@ class Form extends Component {
   componentDidUpdate (previousProps, previousState) {
     if (previousProps.isEditing !== this.props.isEditing) {
       this.setState({
-        category: this.props.boilerTypeToBeEditing.category,
-        id:this.props.boilerTypeToBeEditing.id,
-        description: this.props.boilerTypeToBeEditing.description,
-        skills: this.props.boilerTypeToBeEditing.skills
+        category: this.props.boilerTypeToBeEdited.category,
+        id:this.props.boilerTypeToBeEdited.id,
+        description: this.props.boilerTypeToBeEdited.description,
+        skills: this.props.boilerTypeToBeEdited.skills
       })
     }
   }
@@ -39,8 +39,8 @@ class Form extends Component {
 
   render() {
     const isEditing = this.props.isEditing
-    const boilerTypeToBeEditing = this.props.boilerTypeToBeEditing
     const formTitle = isEditing ? "Edit this boiler type..." : "Add a new type of boiler...";
+    const buttonName = isEditing ? "Update" : "Submit";
     return (
       <div className="container">
         <p>{formTitle}</p>
@@ -81,7 +81,7 @@ class Form extends Component {
               onChange={this.onChange}>
             </input>
           </div>  
-          <input className="btn" type="submit" name="submit" value="Submit"></input>
+          <input className="btn" type="submit" name="submit" value={buttonName}></input>
         </form>
       </div>
     );

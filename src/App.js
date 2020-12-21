@@ -9,7 +9,7 @@ class App extends Component {
   state = {
     boilersTypeList: data,
     isEditing: false,
-    boilerTypeToBeEditing: {},
+    boilerTypeToBeEdited: {},
   }
 
   addNewBoilerType = (newData) => {
@@ -29,7 +29,7 @@ class App extends Component {
 
   activateEditButton = id => {
     const selectedBoilerType = this.state.boilersTypeList.find(boilersTypeList => boilersTypeList.id === id)
-    this.setState({ isEditing: !this.state.isEditing, boilerTypeToBeEditing: selectedBoilerType })
+    this.setState({ isEditing: !this.state.isEditing, boilerTypeToBeEdited: selectedBoilerType })
   }
 
   editBoilerType = (newData) => {
@@ -39,11 +39,13 @@ class App extends Component {
       description: newData.description,
       skills: newData.skills,
     }
-    const boilerTypePosition = this.state.boilersTypeList.findIndex(boilersTypeList => boilersTypeList.id === this.state.boilerTypeToBeEditing.id)
+    const boilerTypePosition = this.state.boilersTypeList.findIndex(
+    boilersTypeList => boilersTypeList.id === this.state.boilerTypeToBeEdited.id
+    )
     const newBoilerTypeList = [...this.state.boilersTypeList]
     newBoilerTypeList[boilerTypePosition] = editedBoilerType
-    console.log(newBoilerTypeList, this.state.boilerTypeToBeEditing)
-    this.setState({boilersTypeList: newBoilerTypeList, isEditing: false, boilerTypeToBeEditing: {}})
+    console.log(newBoilerTypeList, this.state.boilerTypeToBeEdited)
+    this.setState({boilersTypeList: newBoilerTypeList, isEditing: false, boilerTypeToBeEdited: {}})
   }
 
   render() {
@@ -55,7 +57,11 @@ class App extends Component {
           deleteBoilerType={this.deleteBoilerType} 
           activateEditButton={this.activateEditButton}
         />
-        <Form addNewBoilerType={this.addNewBoilerType} boilerTypeToBeEditing={this.state.boilerTypeToBeEditing} isEditing={this.state.isEditing} editBoilerType={this.editBoilerType}/>
+        <Form 
+        addNewBoilerType={this.addNewBoilerType} 
+        boilerTypeToBeEdited={this.state.boilerTypeToBeEdited} 
+        isEditing={this.state.isEditing} 
+        editBoilerType={this.editBoilerType}/>
       </div>
     );
   }

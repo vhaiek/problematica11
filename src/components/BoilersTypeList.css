@@ -19,8 +19,9 @@ td {
 button {
     border: none;
     background-color: white;
-
+    padding: 4px;
 }
+
 h3{
     margin-left: 10%;
     margin-right: 10%;
