@@ -2,19 +2,33 @@ import React, { Component } from 'react';
 import './Form.css';
 
 class Form extends Component {
-  state = {
-    name: "",
+  state = { 
     category: "",
     id: "",
-    description: "",
-    skills: ""
+    description: "", 
+    skills: "",
+  }
+
+  componentDidUpdate (previousProps, previousState) {
+    if (previousProps.isEditing !== this.props.isEditing) {
+      this.setState({
+        category: this.props.boilerTypeToBeEditing.category,
+        id:this.props.boilerTypeToBeEditing.id,
+        description: this.props.boilerTypeToBeEditing.description,
+        skills: this.props.boilerTypeToBeEditing.skills
+      })
+    }
   }
 
   onSubmit = (e) => {
     e.preventDefault ();
+    if (this.props.isEditing) {
+      this.props.editBoilerType(this.state)
+    } else {
     this.props.addNewBoilerType(this.state);
+    }
     this.setState({ 
-      category: "",
+      category: "", 
       id: "",
       description: "",
       skills: ""
@@ -24,9 +38,12 @@ class Form extends Component {
   onChange = (e) => this.setState ({[e.target.name]: e.target.value});
 
   render() {
+    const isEditing = this.props.isEditing
+    const boilerTypeToBeEditing = this.props.boilerTypeToBeEditing
+    const formTitle = isEditing ? "Edit this boiler type..." : "Add a new type of boiler...";
     return (
       <div className="container">
-        <p>Add a new type of boiler...</p>
+        <p>{formTitle}</p>
         <form className="form" onSubmit ={this.onSubmit}>
           <div className="input-group">
             <label>Category</label> 
